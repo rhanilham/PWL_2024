@@ -125,3 +125,14 @@ Route::resource('photos', PhotoController::class);
 Route::resource('photos', PhotoController::class)->only(['index', 'show']);
 Route::resource('photos', PhotoController::class)->except(['create', 'store', 'update', 'destroy']);
 
+// Membuat View
+Route::get('/greeting', function () {
+    return view('hello', ['name' => 'Rhanilham Fadlillatul Ramadhan']);
+});
+
+Route::get('/greeting', function () {
+    return view('blog.hello', ['name' => 'Andi']);
+});
+
+Route::get('/greeting', [WelcomeController::class,'greeting']);
+
